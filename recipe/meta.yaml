@@ -20,7 +20,6 @@ requirements:
     - pip
     - setuptools
   run:
-    - typing_extensions >=4.6.0
     - typing-extensions >=4.6.0
     - python >=3.7
     - azure-core >=1.28.0
