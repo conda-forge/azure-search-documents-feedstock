@@ -1,5 +1,5 @@
 {% set name = "azure-search-documents" %}
-{% set version = "11.5.2" %}
+{% set version = "11.5.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 98977dd1fa4978d3b7d8891a0856b3becb6f02cc07ff2e1ea40b9c7254ada315
+  sha256: 6931149ec0db90485d78648407f18ea4271420473c7cb646bf87790374439989
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -20,6 +20,7 @@ requirements:
     - pip
     - setuptools
   run:
+    - typing_extensions >=4.6.0
     - typing-extensions >=4.6.0
     - python >={{ python_min }}
     - azure-core >=1.28.0
