@@ -1,5 +1,5 @@
 {% set name = "azure-search-documents" %}
-{% set version = "11.5.3" %}
+{% set version = "11.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 6931149ec0db90485d78648407f18ea4271420473c7cb646bf87790374439989
+  sha256: fcc807076ff82024be576ffccb0d0f3261e5c2a112a6666b86ec70bbdb2e1d64
 
 build:
   noarch: python
