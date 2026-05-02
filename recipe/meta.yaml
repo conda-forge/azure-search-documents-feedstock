@@ -30,7 +30,6 @@ requirements:
 test:
   imports:
     - azure.search.documents
-    - azure.search.documents._generated
   commands:
     - pip check
   requires:
