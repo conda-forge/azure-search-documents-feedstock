@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: azure-search-documents
-  version: "12.0.0"
+  version: 12.1.0
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: 8e6d73ec0ed1623083435b757e34324db65d72d4e09cca061a59fc7e90c8ddbc
+  sha256: ba4694c321cd9318ed02dea9078d4fa2f582ae93a33e800c7d7b8f99cb95ac6e
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
@@ -24,12 +24,9 @@ requirements:
     - setuptools
   run:
     - typing_extensions >=4.6.0
-    - typing-extensions >=4.6.0
     - python >=${{ python_min }}
-    - azure-core >=1.28.0
-    - azure-common >=1.1
-    - isodate >=0.6.0
-
+    - azure-core >=1.37.0
+    - isodate >=0.6.1
 tests:
   - python:
       imports:
@@ -37,7 +34,7 @@ tests:
       pip_check: true
       python_version:
         - ${{ python_min }}
-        - "*"
+        - '*'
 
 about:
   summary: Microsoft Azure Cognitive Search Client Library for Python
